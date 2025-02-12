@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7286207404313254322}
   - component: {fileID: 3719814919899605421}
   - component: {fileID: 4281248945852740159}
+  - component: {fileID: 5085451221416143355}
   m_Layer: 0
   m_Name: PFB_FirstPersonCharacter
   m_TagString: Player
@@ -270,6 +271,26 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &5085451221416143355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935131353371124381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6736634594014183504
 GameObject:
   m_ObjectHideFlags: 0
