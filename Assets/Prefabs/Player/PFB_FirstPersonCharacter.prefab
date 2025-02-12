@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 200
   jump_force: 10
-  base_max_speed: 1
+  base_max_speed: 3
   start_external_speed_multiplier: 1
   sprint_speed_multiplier: 2
   sneak_speed_multiplier: 0.5
