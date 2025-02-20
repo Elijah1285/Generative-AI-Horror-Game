@@ -10,6 +10,7 @@ public class AmbientSounds : MonoBehaviour
 
     [SerializeField] float min_time_for_sound;
     [SerializeField] float max_time_for_sound;
+    [SerializeField] float sound_effect_volume;
 
     [SerializeField] AudioClip[] ambient_sounds;
     
@@ -24,7 +25,6 @@ public class AmbientSounds : MonoBehaviour
     void Update()
     {
         sound_timer -= Time.deltaTime;
-        print(sound_timer);
 
         if (sound_timer < 0.0f)
         {
@@ -37,6 +37,6 @@ public class AmbientSounds : MonoBehaviour
     {
         AudioClip chosen_sound = ambient_sounds[Random.Range(0, ambient_sounds.Length)];
 
-        audio_source.PlayOneShot(chosen_sound);
+        audio_source.PlayOneShot(chosen_sound, sound_effect_volume);
     }
 }
