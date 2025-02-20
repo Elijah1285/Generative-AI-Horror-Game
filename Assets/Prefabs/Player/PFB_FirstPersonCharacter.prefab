@@ -144,8 +144,8 @@ MonoBehaviour:
   camera_transform: {fileID: 8085304698619219912}
   jump_sound: {fileID: 0}
   jump_pad_sound: {fileID: 0}
-  walk_sound: {fileID: 0}
-  sprint_sound: {fileID: 0}
+  walk_sound: {fileID: 8300000, guid: 2fa75a9856ad68741a250d86e5f9470c, type: 3}
+  sprint_sound: {fileID: 8300000, guid: 233ff22fe1ba9ea45b6860094f7e6132, type: 3}
   audio_source: {fileID: 3719814919899605421}
 --- !u!82 &3719814919899605421
 AudioSource:

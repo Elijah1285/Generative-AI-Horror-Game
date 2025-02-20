@@ -4,15 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
-public class EntityChase : MonoBehaviour
+public class EntityAI : MonoBehaviour
 {
     Transform player;
 
+    AudioSource audio_source;
+
     NavMeshAgent nav_mesh_agent;
+
+    enum EntityState
+    {
+
+    }
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        audio_source = GetComponent<AudioSource>();
         nav_mesh_agent = GetComponent<NavMeshAgent>();
     }
 

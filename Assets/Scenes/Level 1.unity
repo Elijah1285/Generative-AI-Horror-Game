@@ -2833,7 +2833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_time_for_sound: 10
   max_time_for_sound: 20
-  sound_effect_volume: 0.5
+  sound_effect_volume: 0.25
   ambient_sounds:
   - {fileID: 8300000, guid: ade99fd8e3aae66488c1b6c05e830ba6, type: 3}
   - {fileID: 8300000, guid: 817cec7d1b7b04d458941ffb653d679f, type: 3}
@@ -2854,7 +2854,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3534dd4c780cf724689880534eac3fe4, type: 3}
   m_Resource: {fileID: 8300000, guid: 3534dd4c780cf724689880534eac3fe4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

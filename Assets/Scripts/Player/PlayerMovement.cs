@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     bool is_grounded;
 
     float accelerating_timer = 0.0f;
-    float internal_speed_multiplier = 1.0f;
-    float external_speed_multiplier = 1.0f;
+    float internal_speed_multiplier = 1.0f; //speed multiplier affected by player input (sprinting or sneaking)
+    float external_speed_multiplier = 1.0f; //speed multiplier affected by external factors (walking on slime)
     float air_speed_multiplier = 1.0f;
     float respawn_move_timer = 0.0f;
     float jump_timer = 0.0f;
@@ -38,8 +38,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform ground_check_transform;
     [SerializeField] Transform camera_transform;
 
-    [SerializeField] AudioClip jump_sound;
-    [SerializeField] AudioClip jump_pad_sound;
+    //[SerializeField] AudioClip jump_sound;
     [SerializeField] AudioClip walk_sound;
     [SerializeField] AudioClip sprint_sound;
     [SerializeField] AudioSource audio_source;
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         jumpAndAirCheck();
         updateMoveAudio();
         updateTimers();
-        checkRespawn();
+        checkRespawn();        
     }
 
     private void FixedUpdate()
@@ -135,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
 
     void updateMoveAudio()
     {
+        print(move_audio_state);
+
         if (is_grounded && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f) && internal_speed_multiplier == 1.0f)
         {
             move_audio_state = MoveAudioState.WALKING;
@@ -152,13 +153,13 @@ public class PlayerMovement : MonoBehaviour
         {
             case MoveAudioState.WALKING:
                 {
-                    //audio_source.clip = walk_sound;
+                    audio_source.clip = walk_sound;
                     break;
                 }
 
             case MoveAudioState.SPRINTING:
                 {
-                    //audio_source.clip = sprint_sound;
+                    audio_source.clip = sprint_sound;
                     break;
                 }
 
@@ -166,13 +167,15 @@ public class PlayerMovement : MonoBehaviour
                 {
                     audio_source.clip = null;
                     return;
-                }
+                }            
         }
 
         if (!audio_source.isPlaying)
         {
             audio_source.Play();
         }
+
+        
     }
 
     void updateTimers()
@@ -211,22 +214,6 @@ public class PlayerMovement : MonoBehaviour
 
         //set jump timer
         jump_timer = jump_cooldown;
-    }
-
-    public void padJump(float override_jump_force, bool accelerate)
-    {
-        rb.velocity = new Vector3(rb.velocity.x, 0.0f, rb.velocity.z);
-
-        rb.AddForce(Vector3.up * override_jump_force, ForceMode.Impulse);
-
-        if (accelerate)
-        {
-            internal_speed_multiplier = sprint_speed_multiplier;
-            accelerating_timer = 0.5f;
-        }
-
-        //play jump pad sound
-        //audio_source.PlayOneShot(jump_pad_sound);
     }
 
     public void respawnMoveTimer()
