@@ -38,9 +38,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform ground_check_transform;
     [SerializeField] Transform camera_transform;
 
-    //[SerializeField] AudioClip jump_sound;
+    [SerializeField] AudioClip jump_sound;
     [SerializeField] AudioClip walk_sound;
-    [SerializeField] AudioClip sprint_sound;
+    [SerializeField] AudioClip run_sound;
     [SerializeField] AudioSource audio_source;
 
     void Start()
@@ -134,8 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
     void updateMoveAudio()
     {
-        print(move_audio_state);
-
         if (is_grounded && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f) && internal_speed_multiplier == 1.0f)
         {
             move_audio_state = MoveAudioState.WALKING;
@@ -159,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
 
             case MoveAudioState.SPRINTING:
                 {
-                    audio_source.clip = sprint_sound;
+                    audio_source.clip = run_sound;
                     break;
                 }
 
@@ -210,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
 
         //play jump sound
-        //audio_source.PlayOneShot(jump_sound);
+        audio_source.PlayOneShot(jump_sound);
 
         //set jump timer
         jump_timer = jump_cooldown;

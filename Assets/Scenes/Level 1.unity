@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 84167380}
   - component: {fileID: 84167379}
   - component: {fileID: 84167378}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2382,10 +2382,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3719814919899605421, guid: 836ffb55c317c14418f75a7e7c389807, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719814919899605421, guid: 836ffb55c317c14418f75a7e7c389807, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c68472ac9252b145bbfec4055f3069a, type: 3}
     - target: {fileID: 3935131353371124381, guid: 836ffb55c317c14418f75a7e7c389807, type: 3}
       propertyPath: m_Name
       value: player_avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 7286207404313254322, guid: 836ffb55c317c14418f75a7e7c389807, type: 3}
+      propertyPath: sprint_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 52eee477a30d2804981bad10e7169fcc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

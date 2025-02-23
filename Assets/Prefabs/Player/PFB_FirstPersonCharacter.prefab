@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 200
-  jump_force: 10
+  jump_force: 7.5
   base_max_speed: 3
   start_external_speed_multiplier: 1
   sprint_speed_multiplier: 2
@@ -142,10 +142,9 @@ MonoBehaviour:
   respawn_move_cooldown: 0.5
   ground_check_transform: {fileID: 4397553999885078620}
   camera_transform: {fileID: 8085304698619219912}
-  jump_sound: {fileID: 0}
-  jump_pad_sound: {fileID: 0}
-  walk_sound: {fileID: 8300000, guid: 2fa75a9856ad68741a250d86e5f9470c, type: 3}
-  sprint_sound: {fileID: 8300000, guid: 233ff22fe1ba9ea45b6860094f7e6132, type: 3}
+  jump_sound: {fileID: 8300000, guid: 243d4bd257a559940835ee449ccbf908, type: 3}
+  walk_sound: {fileID: 8300000, guid: 1c68472ac9252b145bbfec4055f3069a, type: 3}
+  run_sound: {fileID: 8300000, guid: 52eee477a30d2804981bad10e7169fcc, type: 3}
   audio_source: {fileID: 3719814919899605421}
 --- !u!82 &3719814919899605421
 AudioSource:
@@ -157,8 +156,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1c68472ac9252b145bbfec4055f3069a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1c68472ac9252b145bbfec4055f3069a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
