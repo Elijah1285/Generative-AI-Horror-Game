@@ -2843,8 +2843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e3f9109c30f104694783ebe4b9d4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min_time_for_sound: 10
-  max_time_for_sound: 20
+  min_time_for_sound: 20
+  max_time_for_sound: 40
   sound_effect_volume: 0.25
   ambient_sounds:
   - {fileID: 8300000, guid: ade99fd8e3aae66488c1b6c05e830ba6, type: 3}
