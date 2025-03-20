@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     bool is_grounded;
+    bool waiting_for_stamina = false;
 
     float accelerating_timer = 0.0f;
     float internal_speed_multiplier = 1.0f; //speed multiplier affected by player input (sprinting or sneaking)
@@ -13,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     float respawn_move_timer = 0.0f;
     float jump_timer = 0.0f;
     float max_speed;
+    float stamina = 1.0f;
 
     Rigidbody rb;
 
@@ -35,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float respawn_move_cooldown;
 
+    [SerializeField] float stamina_drain_rate;
+    [SerializeField] float stamina_regen_rate;
+
     [SerializeField] Transform ground_check_transform;
     [SerializeField] Transform camera_transform;
 
@@ -42,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip walk_sound;
     [SerializeField] AudioClip run_sound;
     [SerializeField] AudioSource audio_source;
+
+    [SerializeField] Slider stamina_bar;
 
     void Start()
     {
@@ -97,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
             float vertical_input = Input.GetAxis("Vertical");
 
             //sprint/sneak
-            if (Input.GetButton("Sprint") && is_grounded)
+            if (Input.GetButton("Sprint") && is_grounded && stamina > 0.0f && !waiting_for_stamina)
             {
                 internal_speed_multiplier = sprint_speed_multiplier;
             }
@@ -108,6 +116,34 @@ public class PlayerMovement : MonoBehaviour
             else if (!Input.GetButton("Sprint") && !Input.GetButton("Sneak") && is_grounded && accelerating_timer <= 0.0f)
             {
                 internal_speed_multiplier = 1.0f;
+            }
+
+            if (internal_speed_multiplier == sprint_speed_multiplier && (horizontal_input != 0.0f || vertical_input != 0.0f))
+            {
+                stamina -= stamina_drain_rate * Time.deltaTime;
+
+                if (stamina <= 0.0f)
+                {
+                    internal_speed_multiplier = 1.0f;
+                    stamina = 0.0f;
+
+                    waiting_for_stamina = true;
+                }
+
+                stamina_bar.value = stamina;
+            }
+            else if (stamina < 1.0f)
+            {
+                stamina += stamina_regen_rate * Time.deltaTime;
+
+                if (stamina >= 1.0f)
+                {
+                    waiting_for_stamina = false;
+
+                    stamina = 1.0f;
+                }
+
+                stamina_bar.value = stamina;
             }
 
             //set max speed
