@@ -47,7 +47,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip jump_sound;
     [SerializeField] AudioClip walk_sound;
     [SerializeField] AudioClip run_sound;
-    [SerializeField] AudioSource audio_source;
+
+    [SerializeField] AudioSource main_audio_source;
+    [SerializeField] AudioSource panting_audio_source;
 
     [SerializeField] Slider stamina_bar;
 
@@ -128,6 +130,8 @@ public class PlayerMovement : MonoBehaviour
                     stamina = 0.0f;
 
                     waiting_for_stamina = true;
+
+                    panting_audio_source.Play();
                 }
 
                 stamina_bar.value = stamina;
@@ -138,9 +142,11 @@ public class PlayerMovement : MonoBehaviour
 
                 if (stamina >= 1.0f)
                 {
+                    stamina = 1.0f;
+
                     waiting_for_stamina = false;
 
-                    stamina = 1.0f;
+                    panting_audio_source.Stop();
                 }
 
                 stamina_bar.value = stamina;
@@ -187,26 +193,26 @@ public class PlayerMovement : MonoBehaviour
         {
             case MoveAudioState.WALKING:
                 {
-                    audio_source.clip = walk_sound;
+                    main_audio_source.clip = walk_sound;
                     break;
                 }
 
             case MoveAudioState.SPRINTING:
                 {
-                    audio_source.clip = run_sound;
+                    main_audio_source.clip = run_sound;
                     break;
                 }
 
             case MoveAudioState.NO_AUDIO:
                 {
-                    audio_source.clip = null;
+                    main_audio_source.clip = null;
                     return;
                 }            
         }
 
-        if (!audio_source.isPlaying)
+        if (!main_audio_source.isPlaying)
         {
-            audio_source.Play();
+            main_audio_source.Play();
         }
 
         
@@ -244,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
 
         //play jump sound
-        audio_source.PlayOneShot(jump_sound);
+        main_audio_source.PlayOneShot(jump_sound);
 
         //set jump timer
         jump_timer = jump_cooldown;
