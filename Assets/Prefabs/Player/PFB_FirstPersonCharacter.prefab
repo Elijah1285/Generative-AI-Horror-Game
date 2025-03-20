@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 952044325883385819}
   - component: {fileID: 300655725231389226}
   - component: {fileID: 7286207404313254322}
+  - component: {fileID: -5779738676572940083}
   - component: {fileID: 3719814919899605421}
   - component: {fileID: 9148013245270359685}
   - component: {fileID: 4281248945852740159}
@@ -150,6 +151,19 @@ MonoBehaviour:
   main_audio_source: {fileID: 3719814919899605421}
   panting_audio_source: {fileID: 9148013245270359685}
   stamina_bar: {fileID: 0}
+--- !u!114 &-5779738676572940083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935131353371124381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c522608218be44ab92c45f75a39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_interaction_distance: 5
 --- !u!82 &3719814919899605421
 AudioSource:
   m_ObjectHideFlags: 0
