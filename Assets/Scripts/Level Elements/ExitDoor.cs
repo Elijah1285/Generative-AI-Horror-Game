@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
+    bool locked = true;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             SceneManager.LoadScene("Ending");
         }
+    }
+
+    public void unlock()
+    {
+        locked = false;
     }
 }

@@ -35,7 +35,7 @@ public class PlayerInteract : MonoBehaviour
                 }
                 else if (hit.collider.tag == "KeycardReader")
                 {
-
+                    hit.collider.GetComponent<KeycardReader>().readKeycards(collected_keycards);
                 }
             }
         }
