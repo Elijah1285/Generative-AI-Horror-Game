@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0d61aa5e64b5fa3478394db25b98d77e, type: 2}
+    - target: {fileID: -2833338069695891684, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2690037304153564583, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1502272907037693893, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 313545102638058296, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -76,10 +88,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Keycard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_TagString
+      value: Keycard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238674303737049728, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3313245474176393729, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0d61aa5e64b5fa3478394db25b98d77e, type: 2}
+    - target: {fileID: 7171781199441251546, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7569843855406068933, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -91,6 +119,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3430126884831997474}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1578982583607902668}
   m_SourcePrefab: {fileID: 100100000, guid: 8f54fd321d88f31429648b771a73dcad, type: 3}
 --- !u!1 &6107749383002112071 stripped
 GameObject:
@@ -118,3 +149,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9, y: 1.2, z: 0.06}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1578982583607902668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107749383002112071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a526152b658fb479b46a0e43b0ba76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
