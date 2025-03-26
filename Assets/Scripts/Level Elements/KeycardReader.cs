@@ -13,6 +13,7 @@ public class KeycardReader : MonoBehaviour
 
     public void readKeycards(List<Keycard.KeycardType> keycards)
     {
+        Debug.Log("a");
         bool red = false;
         bool green = false;
         bool blue = false;

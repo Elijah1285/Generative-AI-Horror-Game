@@ -164,6 +164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_interaction_distance: 5
+  interactable_layer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!82 &3719814919899605421
 AudioSource:
   m_ObjectHideFlags: 0

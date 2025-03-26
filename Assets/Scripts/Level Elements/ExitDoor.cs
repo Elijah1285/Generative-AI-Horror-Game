@@ -9,7 +9,7 @@ public class ExitDoor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (!locked && other.tag == "Player")
         {
             SceneManager.LoadScene("Ending");
         }
