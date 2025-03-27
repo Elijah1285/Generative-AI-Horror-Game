@@ -157,3 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d11509e4c03af4fae36f67d18bf5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door_light: {fileID: 0}
+  green_door_light_material: {fileID: 2100000, guid: 2558c9e707e91b7428414d576c33577f, type: 2}
