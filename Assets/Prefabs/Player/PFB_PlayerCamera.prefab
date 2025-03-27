@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44beeb8d2deea9a4792d3d18e5125602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x_sensitivity: 100
-  y_sensitivity: 100
+  x_sensitivity: 300
+  y_sensitivity: 300
   player_transform: {fileID: 0}
   target_position: {fileID: 0}

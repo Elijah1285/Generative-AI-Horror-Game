@@ -65,8 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         jumpAndAirCheck();
         updateMoveAudio();
-        updateTimers();
-        checkRespawn();        
+        updateTimers();      
     }
 
     private void FixedUpdate()
@@ -233,14 +232,6 @@ public class PlayerMovement : MonoBehaviour
         if (jump_timer > 0.0f)
         {
             jump_timer -= Time.deltaTime;
-        }
-    }
-
-    void checkRespawn()
-    {
-        if (Input.GetButtonDown("Respawn"))
-        {
-
         }
     }
 
