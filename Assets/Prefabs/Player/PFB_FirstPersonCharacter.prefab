@@ -167,6 +167,8 @@ MonoBehaviour:
   interactable_layer:
     serializedVersion: 2
     m_Bits: 64
+  main_audio_source: {fileID: 3719814919899605421}
+  pickup_sound: {fileID: 8300000, guid: 62093faa592ab3948a3b65737e40b123, type: 3}
 --- !u!82 &3719814919899605421
 AudioSource:
   m_ObjectHideFlags: 0

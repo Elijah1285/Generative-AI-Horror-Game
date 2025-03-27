@@ -12,6 +12,9 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] LayerMask interactable_layer;
 
+    [SerializeField] AudioSource main_audio_source;
+    [SerializeField] AudioClip pickup_sound;
+
     void Start()
     {
         player_camera = GameObject.FindWithTag("MainCamera");
@@ -30,8 +33,9 @@ public class PlayerInteract : MonoBehaviour
                 if (hit.collider.tag == "Keycard")
                 {
                     collected_keycards.Add(hit.collider.GetComponent<Keycard>().getKeycardType());
+                    Destroy(hit.collider.gameObject);
 
-                    Destroy(hit.collider.gameObject);   
+                    main_audio_source.PlayOneShot(pickup_sound);
                 }
                 else if (hit.collider.tag == "KeycardReader")
                 {
