@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53604f86def628f4aac1f97cfa8b0e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpscare: {fileID: 0}
+  jumpscare_sound: {fileID: 8300000, guid: 728bf4b6484b87b47a5a90a25101d037, type: 3}
 --- !u!195 &8749591379687895502
 NavMeshAgent:
   m_ObjectHideFlags: 0

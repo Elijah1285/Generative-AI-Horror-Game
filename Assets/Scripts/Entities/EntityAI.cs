@@ -14,6 +14,8 @@ public class EntityAI : MonoBehaviour
 
     [SerializeField] GameObject jumpscare;
 
+    [SerializeField] AudioClip jumpscare_sound;
+
     enum EntityState
     {
 
@@ -35,7 +37,8 @@ public class EntityAI : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            jumpscare.GetComponent<Animator>().Play("ANM_Jumpscare");
+            jumpscare.SetActive(true);
+            GetComponent<AudioSource>().PlayOneShot(jumpscare_sound);
         }
     }
 }
