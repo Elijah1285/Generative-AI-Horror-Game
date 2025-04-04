@@ -12,6 +12,8 @@ public class EntityAI : MonoBehaviour
 
     NavMeshAgent nav_mesh_agent;
 
+    [SerializeField] GameObject jumpscare;
+
     enum EntityState
     {
 
@@ -33,7 +35,7 @@ public class EntityAI : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("Game Over");
+            jumpscare.GetComponent<Animator>().Play("ANM_Jumpscare");
         }
     }
 }
