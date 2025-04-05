@@ -31,6 +31,14 @@ public class EntityAI : MonoBehaviour
     void Update()
     {
         nav_mesh_agent.destination = player.position;
+
+        if (jumpscare.activeSelf)
+        {
+            if (jumpscare.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            {
+                SceneManager.LoadScene("Game Over");
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)

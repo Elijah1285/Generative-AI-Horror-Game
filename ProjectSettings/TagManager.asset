@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Keycard
   - KeycardReader
+  - ExitDoor
   layers:
   - Default
   - TransparentFX

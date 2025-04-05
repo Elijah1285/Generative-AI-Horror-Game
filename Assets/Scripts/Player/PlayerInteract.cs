@@ -41,6 +41,10 @@ public class PlayerInteract : MonoBehaviour
                 {
                     hit.collider.GetComponent<KeycardReader>().readKeycards(collected_keycards);
                 }
+                else if (hit.collider.tag == "ExitDoor")
+                {                    
+                        hit.collider.GetComponent<ExitDoor>().tryOpen();
+                }
             }
         }
     }

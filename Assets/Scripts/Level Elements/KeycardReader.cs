@@ -32,40 +32,52 @@ public class KeycardReader : MonoBehaviour
 
         bool playing_scan_sound = false;
 
-        if (keycards.Contains(Keycard.KeycardType.Red) && !red_light.activeSelf)
+        if (keycards.Contains(Keycard.KeycardType.Red))
         {
-            red_light.SetActive(true);
-            red = true;
+            if (!red_light.activeSelf)
+            {
+                tryPlayScanSound(playing_scan_sound);
+                playing_scan_sound = true;
+            }
 
-            tryPlayScanSound(playing_scan_sound);
-            playing_scan_sound = true;
+            red_light.SetActive(true);
+            red = true;        
         }
 
-        if (keycards.Contains(Keycard.KeycardType.Green) && !green_light.activeSelf)
+        if (keycards.Contains(Keycard.KeycardType.Green))
         {
+            if (!green_light.activeSelf)
+            {
+                tryPlayScanSound(playing_scan_sound);
+                playing_scan_sound = true;
+            }
+
             green_light.SetActive(true);
             green = true;
-
-            tryPlayScanSound(playing_scan_sound);
-            playing_scan_sound = true;
         }
 
-        if (keycards.Contains(Keycard.KeycardType.Blue) && !blue_light.activeSelf)
+        if (keycards.Contains(Keycard.KeycardType.Blue))
         {
+            if (!blue_light.activeSelf)
+            {
+                tryPlayScanSound(playing_scan_sound);
+                playing_scan_sound = true;
+            }
+
             blue_light.SetActive(true);
-            blue = true;
-
-            tryPlayScanSound(playing_scan_sound);
-            playing_scan_sound = true;
+            blue = true;            
         }
 
-        if (keycards.Contains(Keycard.KeycardType.Yellow) && !yellow_light.activeSelf)
+        if (keycards.Contains(Keycard.KeycardType.Yellow))
         {
-            yellow_light.SetActive(true);
-            yellow = true;
+            if (!yellow_light.activeSelf)
+            {
+                tryPlayScanSound(playing_scan_sound);
+                playing_scan_sound = true;
+            }
 
-            tryPlayScanSound(playing_scan_sound);
-            playing_scan_sound = true;
+            yellow_light.SetActive(true);
+            yellow = true;            
         }
 
         if (red && green && blue && yellow)
@@ -84,6 +96,7 @@ public class KeycardReader : MonoBehaviour
 
     void startDoorUnlock()
     {
+        Debug.Log("a");
         StartCoroutine(timeBeforeDoorUnlock());
     }
 
