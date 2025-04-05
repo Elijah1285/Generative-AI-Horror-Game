@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PipeSegmentDefault
+  m_Name: M_DefaultAirVent
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 33cfcd791a2168e4fbe2076a4b174026, type: 3}
+        m_Texture: {fileID: 2800000, guid: 363b1db9800746642b33cd7ac2896299, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -46,11 +46,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a4a612bc3d0710945a6b990074d31f70, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49cb4df6611d1e746918f454d2f04cfd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b56a888eb38b82f4c9ccd056c65ac8a6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f7ccb22c70f76643b4dcacbf62ea671, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
