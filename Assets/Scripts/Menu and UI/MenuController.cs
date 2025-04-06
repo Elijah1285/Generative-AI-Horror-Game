@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public void startGame()
+    public void newGame()
     {
-        SceneManager.LoadScene("Level 1");
+        PlayerPrefs.SetInt("current_level", 1);
+        SceneManager.LoadScene("Loading Screen");
+    }
+
+    public void loadGame()
+    {
+        SceneManager.LoadScene("Loading Screen");
     }
 
     public void quitGame()

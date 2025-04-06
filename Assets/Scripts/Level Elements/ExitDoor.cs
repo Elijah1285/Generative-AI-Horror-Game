@@ -9,6 +9,7 @@ public class ExitDoor : MonoBehaviour
     bool opening_door = false;
     float door_open_time_remaining = 2.0f;
 
+    [SerializeField] int next_level; //the next level to load and save as the current, "0" takes player to the ending screen
     [SerializeField] string next_scene_name;
 
     [SerializeField] GameObject door_light;
@@ -24,7 +25,15 @@ public class ExitDoor : MonoBehaviour
 
             if (door_open_time_remaining <= 0.0f)
             {
-                SceneManager.LoadScene(next_scene_name);
+                if (next_level == 0)
+                {
+                    SceneManager.LoadScene("Ending Screen");
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("current_level", next_level);
+                    SceneManager.LoadScene("Loading Screen");
+                }
             }
         }
     }
