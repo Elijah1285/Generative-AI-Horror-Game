@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmbientSounds : MonoBehaviour
+public class AudioPlayer : MonoBehaviour
 {
     float sound_timer = 0.0f;
 
@@ -12,12 +12,16 @@ public class AmbientSounds : MonoBehaviour
     [SerializeField] float max_time_for_sound;
     [SerializeField] float sound_effect_volume;
 
+    [SerializeField] AudioClip[] music_to_choose_from;
+
     [SerializeField] AudioClip[] ambient_sounds;
     
 
     void Start()
     {
         audio_source = GetComponent<AudioSource>();
+
+        audio_source.clip = music_to_choose_from[Random.Range(0, music_to_choose_from.Length)];
 
         sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
     }
