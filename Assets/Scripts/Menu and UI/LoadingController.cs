@@ -7,6 +7,6 @@ public class LoadingController : MonoBehaviour
 {
     void Start()
     {
-        SceneManager.LoadScene("Level " + PlayerPrefs.GetInt("current_level"));
+        SceneManager.LoadScene("Level " + PlayerPrefs.GetInt("current_level").ToString());
     }
 }

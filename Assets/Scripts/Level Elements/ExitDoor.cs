@@ -10,7 +10,6 @@ public class ExitDoor : MonoBehaviour
     float door_open_time_remaining = 2.0f;
 
     [SerializeField] int next_level; //the next level to load and save as the current, "0" takes player to the ending screen
-    [SerializeField] string next_scene_name;
 
     [SerializeField] GameObject door_light;
     [SerializeField] Material green_door_light_material;
