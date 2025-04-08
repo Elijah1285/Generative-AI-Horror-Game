@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2800106625006911036}
   - component: {fileID: 6038862659683014234}
   - component: {fileID: 8974042117005744033}
+  - component: {fileID: 4687689635943770862}
   - component: {fileID: 8749591379687895502}
   - component: {fileID: 7052162213927095049}
   m_Layer: 0
@@ -126,6 +127,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpscare: {fileID: 0}
   jumpscare_sound: {fileID: 8300000, guid: 728bf4b6484b87b47a5a90a25101d037, type: 3}
+--- !u!114 &4687689635943770862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633971484516739965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4994794b0de96964b8e989d89585ec15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min_time_for_sound: 10
+  max_time_for_sound: 20
+  sound_effect_volume: 0.1
+  sounds:
+  - {fileID: 8300000, guid: 498477a06099c7f4ab04c2483327f306, type: 3}
+  - {fileID: 8300000, guid: 97342015e114cec42acb75afe89025bd, type: 3}
+  - {fileID: 8300000, guid: eba2bf8193dc65749aeaf117fc57b515, type: 3}
+  - {fileID: 8300000, guid: 63b8e8610af8cb54489857ef497ad76f, type: 3}
+  - {fileID: 8300000, guid: 5a27abb95425ca745956318d60dc9f4e, type: 3}
+  - {fileID: 8300000, guid: 8d479706ee359e04da5bbfb91c5c792a, type: 3}
 --- !u!195 &8749591379687895502
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -172,7 +195,7 @@ AudioSource:
   MinDistance: 5
   MaxDistance: 100
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

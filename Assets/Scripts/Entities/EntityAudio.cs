@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour
+public class EntityAudio : MonoBehaviour
 {
     float sound_timer = 0.0f;
 
@@ -12,18 +12,11 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] float max_time_for_sound;
     [SerializeField] float sound_effect_volume;
 
-    [SerializeField] AudioClip[] music_to_choose_from;
-
-    [SerializeField] AudioClip[] ambient_sounds;
-    
+    [SerializeField] AudioClip[] sounds;
 
     void Start()
     {
         audio_source = GetComponent<AudioSource>();
-
-        audio_source.clip = music_to_choose_from[Random.Range(0, music_to_choose_from.Length)];
-        audio_source.Play();
-
         sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
     }
 
@@ -33,14 +26,14 @@ public class AudioPlayer : MonoBehaviour
 
         if (sound_timer <= 0.0f)
         {
-            playRandomAmbientSound();
+            playRandomSound();
             sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
         }
     }
 
-    void playRandomAmbientSound()
+    void playRandomSound()
     {
-        AudioClip chosen_sound = ambient_sounds[Random.Range(0, ambient_sounds.Length)];
+        AudioClip chosen_sound = sounds[Random.Range(0, sounds.Length)];
 
         audio_source.PlayOneShot(chosen_sound, sound_effect_volume);
     }
