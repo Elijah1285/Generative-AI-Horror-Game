@@ -13,7 +13,7 @@ public class EndingScreenController : MonoBehaviour
 
     public void returnToTitleScreen()
     {
-        SceneManager.LoadScene("Title Screen");
+        SceneManager.LoadScene("SCN_TitleScreen");
     }
 
     public void quitGame()

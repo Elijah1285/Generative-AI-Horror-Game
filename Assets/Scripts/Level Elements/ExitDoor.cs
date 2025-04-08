@@ -33,7 +33,7 @@ public class ExitDoor : MonoBehaviour
                 else
                 {
                     PlayerPrefs.SetInt("current_level", next_level);
-                    SceneManager.LoadScene("Loading Screen");
+                    SceneManager.LoadScene("SCN_LoadingScreen");
                 }
             }
         }

@@ -16,7 +16,7 @@ public class LoadingController : MonoBehaviour
 
     IEnumerator loadLevelAsync()
     {
-        AsyncOperation load_operation = SceneManager.LoadSceneAsync("Level " + PlayerPrefs.GetInt("current_level").ToString());
+        AsyncOperation load_operation = SceneManager.LoadSceneAsync("SCN_Level" + PlayerPrefs.GetInt("current_level").ToString());
 
         while (!load_operation.isDone)
         {

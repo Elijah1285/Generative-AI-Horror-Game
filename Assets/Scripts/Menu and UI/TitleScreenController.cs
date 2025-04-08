@@ -8,12 +8,12 @@ public class TitleScreenController : MonoBehaviour
     public void newGame()
     {
         PlayerPrefs.SetInt("current_level", 1);
-        SceneManager.LoadScene("Loading Screen");
+        SceneManager.LoadScene("SCN_LoadingScreen");
     }
 
     public void loadGame()
     {
-        SceneManager.LoadScene("Loading Screen");
+        SceneManager.LoadScene("SCN_LoadingScreen");
     }
 
     public void quitGame()

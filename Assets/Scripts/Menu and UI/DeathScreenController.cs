@@ -13,11 +13,11 @@ public class DeathScreenController : MonoBehaviour
 
     public void retry()
     {
-        SceneManager.LoadScene("Loading Screen");
+        SceneManager.LoadScene("SCN_LoadingScreen");
     }
 
     public void returnToTitleScreen()
     {
-        SceneManager.LoadScene("Title Screen");
+        SceneManager.LoadScene("SCN_TitleScreen");
     }
 }
