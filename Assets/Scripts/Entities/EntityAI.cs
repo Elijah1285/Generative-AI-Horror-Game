@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class EntityAI : MonoBehaviour
 {
+    bool jumpscaring = false;
+
     Transform player;
 
     AudioSource audio_source;
@@ -15,11 +17,6 @@ public class EntityAI : MonoBehaviour
     [SerializeField] GameObject jumpscare;
 
     [SerializeField] AudioClip jumpscare_sound;
-
-    enum EntityState
-    {
-
-    }
 
     void Start()
     {
@@ -43,8 +40,9 @@ public class EntityAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !jumpscaring)
         {
+            jumpscaring = true;
             jumpscare.SetActive(true);
             GetComponent<AudioSource>().PlayOneShot(jumpscare_sound);
         }

@@ -22,6 +22,7 @@ public class AudioPlayer : MonoBehaviour
         audio_source = GetComponent<AudioSource>();
 
         audio_source.clip = music_to_choose_from[Random.Range(0, music_to_choose_from.Length)];
+        audio_source.Play();
 
         sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
     }
