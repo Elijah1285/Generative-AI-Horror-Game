@@ -14,20 +14,27 @@ public class EntityAudio : MonoBehaviour
 
     [SerializeField] AudioClip[] sounds;
 
+    [SerializeField] EntityAI entity_ai;
+
     void Start()
     {
+        entity_ai = GetComponent<EntityAI>();
+
         audio_source = GetComponent<AudioSource>();
         sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
     }
 
     void Update()
     {
-        sound_timer -= Time.deltaTime;
-
-        if (sound_timer <= 0.0f)
+        if (!entity_ai.getJumpscaring() && !entity_ai.getDisabled())
         {
-            playRandomSound();
-            sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
+            sound_timer -= Time.deltaTime;
+
+            if (sound_timer <= 0.0f)
+            {
+                playRandomSound();
+                sound_timer = Random.Range(min_time_for_sound, max_time_for_sound);
+            }
         }
     }
 

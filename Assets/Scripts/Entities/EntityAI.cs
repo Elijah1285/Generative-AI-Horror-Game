@@ -56,5 +56,16 @@ public class EntityAI : MonoBehaviour
     {
         disabled = true;
         nav_mesh_agent.speed = 0.0f;
+        GetComponent<AudioSource>().Stop();
+    }
+
+    public bool getJumpscaring()
+    {
+        return jumpscaring;
+    }
+
+    public bool getDisabled()
+    {
+        return disabled;
     }
 }

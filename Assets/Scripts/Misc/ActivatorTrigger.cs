@@ -10,7 +10,10 @@ public class ActivatorTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            object_to_activate.SetActive(true);
+            if (object_to_activate != null)
+            {
+                object_to_activate.SetActive(true);
+            }
         }
     }
 }

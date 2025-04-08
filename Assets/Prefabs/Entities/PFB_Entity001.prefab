@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_time_for_sound: 10
   max_time_for_sound: 20
-  sound_effect_volume: 0.1
+  sound_effect_volume: 0.15
   sounds:
   - {fileID: 8300000, guid: 498477a06099c7f4ab04c2483327f306, type: 3}
   - {fileID: 8300000, guid: 97342015e114cec42acb75afe89025bd, type: 3}
@@ -149,6 +149,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 63b8e8610af8cb54489857ef497ad76f, type: 3}
   - {fileID: 8300000, guid: 5a27abb95425ca745956318d60dc9f4e, type: 3}
   - {fileID: 8300000, guid: 8d479706ee359e04da5bbfb91c5c792a, type: 3}
+  entity_ai: {fileID: 0}
 --- !u!195 &8749591379687895502
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ AudioSource:
   Priority: 256
   DopplerLevel: 0.25
   MinDistance: 5
-  MaxDistance: 100
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
