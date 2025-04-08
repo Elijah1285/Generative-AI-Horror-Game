@@ -9,4 +9,9 @@ public class EndingScreenController : MonoBehaviour
     {
         SceneManager.LoadScene("Title Screen");
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
