@@ -8,6 +8,8 @@ public class ExitDoor : MonoBehaviour
     bool locked = true;
     bool opening_door = false;
     float door_open_time_remaining = 2.0f;
+    float try_open_timer = 0.0f;
+    float try_open_cooldown = 0.5f;
 
     [SerializeField] int next_level; //the next level to load and save as the current, "0" takes player to the ending screen
 
@@ -35,6 +37,11 @@ public class ExitDoor : MonoBehaviour
                 }
             }
         }
+
+        if (try_open_timer > 0.0f)
+        {
+            try_open_timer -= Time.deltaTime;
+        }
     }
 
     public void unlock()
@@ -49,14 +56,21 @@ public class ExitDoor : MonoBehaviour
 
     public void tryOpen()
     {
-        if (!locked)
+        if (!opening_door && try_open_timer <= 0)
         {
-            GetComponent<AudioSource>().PlayOneShot(door_open_sound);
-            opening_door = true;
-        }
-        else
-        {
-            GetComponent<AudioSource>().PlayOneShot(door_open_fail_sound);
+            if (!locked)
+            {
+                GetComponent<AudioSource>().PlayOneShot(door_open_sound);
+                opening_door = true;
+
+                //stop entity
+                GameObject.FindWithTag("Entity").GetComponent<EntityAI>().disable();
+            }
+            else
+            {
+                GetComponent<AudioSource>().PlayOneShot(door_open_fail_sound);
+                try_open_timer = try_open_cooldown;
+            }
         }
     }
 

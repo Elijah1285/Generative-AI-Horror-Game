@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EntityAI : MonoBehaviour
 {
     bool jumpscaring = false;
+    bool disabled = false;
 
     Transform player;
 
@@ -40,11 +41,17 @@ public class EntityAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && !jumpscaring)
+        if (other.tag == "Player" && !jumpscaring && !disabled)
         {
             jumpscaring = true;
             jumpscare.SetActive(true);
             GetComponent<AudioSource>().PlayOneShot(jumpscare_sound);
         }
+    }
+
+    public void disable()
+    {
+        disabled = true;
+        nav_mesh_agent.speed = 0.0f;
     }
 }

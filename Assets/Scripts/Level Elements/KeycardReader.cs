@@ -38,9 +38,9 @@ public class KeycardReader : MonoBehaviour
             {
                 tryPlayScanSound(playing_scan_sound);
                 playing_scan_sound = true;
+                red_light.SetActive(true);
             }
-
-            red_light.SetActive(true);
+            
             red = true;        
         }
 
@@ -50,9 +50,9 @@ public class KeycardReader : MonoBehaviour
             {
                 tryPlayScanSound(playing_scan_sound);
                 playing_scan_sound = true;
+                green_light.SetActive(true);
             }
-
-            green_light.SetActive(true);
+            
             green = true;
         }
 
@@ -62,9 +62,9 @@ public class KeycardReader : MonoBehaviour
             {
                 tryPlayScanSound(playing_scan_sound);
                 playing_scan_sound = true;
+                blue_light.SetActive(true);
             }
-
-            blue_light.SetActive(true);
+            
             blue = true;            
         }
 
@@ -74,13 +74,13 @@ public class KeycardReader : MonoBehaviour
             {
                 tryPlayScanSound(playing_scan_sound);
                 playing_scan_sound = true;
+                yellow_light.SetActive(true);
             }
-
-            yellow_light.SetActive(true);
+            
             yellow = true;            
         }
 
-        if (red && green && blue && yellow)
+        if (door_to_open.getLocked() && red && green && blue && yellow)
         {
             startDoorUnlock();
         }
@@ -96,7 +96,6 @@ public class KeycardReader : MonoBehaviour
 
     void startDoorUnlock()
     {
-        Debug.Log("a");
         StartCoroutine(timeBeforeDoorUnlock());
     }
 
@@ -105,7 +104,6 @@ public class KeycardReader : MonoBehaviour
         yield return new WaitForSeconds(time_to_unlock_door);
 
         unlockDoor();
-        Debug.Log("unlocked");
     }
 
     void unlockDoor()
