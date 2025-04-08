@@ -34,7 +34,7 @@ public class EntityAI : MonoBehaviour
         {
             if (jumpscare.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
             {
-                SceneManager.LoadScene("Death Screen");
+                SceneManager.LoadScene("SCN_DeathScreen");
             }
         }
     }

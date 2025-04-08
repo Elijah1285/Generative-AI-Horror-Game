@@ -28,7 +28,7 @@ public class ExitDoor : MonoBehaviour
             {
                 if (next_level == 0)
                 {
-                    SceneManager.LoadScene("Ending Screen");
+                    SceneManager.LoadScene("SCN_EndingScreen");
                 }
                 else
                 {
