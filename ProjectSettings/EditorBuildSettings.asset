@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
+    path: Assets/Scenes/SCN_TitleScreen.unity
     guid: 724bc269ca475064d985e4347bbd3600
   - enabled: 1
-    path: Assets/Scenes/Loading Screen.unity
+    path: Assets/Scenes/SCN_LoadingScreen.unity
     guid: 16d0cc7851fb11b418873e3af26e5c80
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/SCN_Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/SCN_Level2.unity
     guid: 327c629475a39e740b231be3efc5e485
   - enabled: 1
-    path: Assets/Scenes/Death Screen.unity
+    path: Assets/Scenes/SCN_DeathScreen.unity
     guid: 5433632d84410bf48ad3a531d1cb0802
   - enabled: 1
-    path: Assets/Scenes/Ending Screen.unity
+    path: Assets/Scenes/SCN_EndingScreen.unity
     guid: dd82fec47e6de5a42a09105113315259
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
