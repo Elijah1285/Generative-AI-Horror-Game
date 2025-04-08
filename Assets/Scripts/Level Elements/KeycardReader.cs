@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KeycardReader : MonoBehaviour
 {
+    bool unlocked = false;
+
     [SerializeField] float time_to_unlock_door;
 
     [SerializeField] GameObject red_light;
@@ -80,8 +82,9 @@ public class KeycardReader : MonoBehaviour
             yellow = true;            
         }
 
-        if (door_to_open.getLocked() && red && green && blue && yellow)
+        if (!unlocked && red && green && blue && yellow)
         {
+            unlocked = true;
             startDoorUnlock();
         }
     }

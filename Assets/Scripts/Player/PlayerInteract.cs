@@ -10,6 +10,11 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] float max_interaction_distance;
 
+    [SerializeField] GameObject red_keycard_2d;
+    [SerializeField] GameObject green_keycard_2d;
+    [SerializeField] GameObject blue_keycard_2d;
+    [SerializeField] GameObject yellow_keycard_2d;
+
     [SerializeField] LayerMask interactable_layer;
 
     [SerializeField] AudioSource main_audio_source;
@@ -32,8 +37,38 @@ public class PlayerInteract : MonoBehaviour
             {
                 if (hit.collider.tag == "Keycard")
                 {
-                    collected_keycards.Add(hit.collider.GetComponent<Keycard>().getKeycardType());
+                    Keycard.KeycardType keycard_type = hit.collider.GetComponent<Keycard>().getKeycardType();
+
+                    collected_keycards.Add(keycard_type);
                     Destroy(hit.collider.gameObject);
+
+                    switch (keycard_type)
+                    {
+                        case (Keycard.KeycardType.Red):
+                            {
+                                red_keycard_2d.SetActive(true);
+
+                                break;
+                            }
+                        case (Keycard.KeycardType.Green):
+                            {
+                                green_keycard_2d.SetActive(true);
+
+                                break;
+                            }
+                        case (Keycard.KeycardType.Blue):
+                            {
+                                blue_keycard_2d.SetActive(true);
+
+                                break;
+                            }
+                        case (Keycard.KeycardType.Yellow):
+                            {
+                                yellow_keycard_2d.SetActive(true);
+
+                                break;
+                            }
+                    }
 
                     main_audio_source.PlayOneShot(pickup_sound);
                 }
@@ -42,10 +77,11 @@ public class PlayerInteract : MonoBehaviour
                     hit.collider.GetComponent<KeycardReader>().readKeycards(collected_keycards);
                 }
                 else if (hit.collider.tag == "ExitDoor")
-                {                    
-                        hit.collider.GetComponent<ExitDoor>().tryOpen();
+                {
+                    hit.collider.GetComponent<ExitDoor>().tryOpen();
                 }
             }
-        }
+        } 
     }
 }
+
