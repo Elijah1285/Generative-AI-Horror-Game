@@ -46,6 +46,7 @@ public class EntityAI : MonoBehaviour
             jumpscaring = true;
             jumpscare.SetActive(true);
 
+            GameObject.FindWithTag("AudioPlayer").SetActive(false);
             GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().PlayOneShot(jumpscare_sound);
         }

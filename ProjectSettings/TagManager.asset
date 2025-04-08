@@ -8,6 +8,7 @@ TagManager:
   - KeycardReader
   - ExitDoor
   - Entity
+  - AudioPlayer
   layers:
   - Default
   - TransparentFX
