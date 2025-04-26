@@ -11,13 +11,13 @@ public class DynamicTextureTiling : MonoBehaviour
     void Start()
     {
         // Ensure we have a material
-        originalMaterial = GetComponent<Renderer>().material;
+        originalMaterial = GetComponent<Renderer>().sharedMaterial;
 
         // Create a new material instance for this object
         Material materialInstance = new Material(originalMaterial);
 
         // Apply the new material to the object
-        GetComponent<Renderer>().material = materialInstance;
+        GetComponent<Renderer>().sharedMaterial = materialInstance;
 
         // Get the initial scale of the object
         Vector3 initialScale = transform.localScale;
@@ -29,7 +29,7 @@ public class DynamicTextureTiling : MonoBehaviour
     void Update()
     {
         // Adjust texture tiling based on the current scale
-        SetTextureTiling(GetComponent<Renderer>().material, new Vector3(1.0f, transform.localScale.y * material_tiling_multiplier.y, transform.localScale.z * material_tiling_multiplier.x));
+        SetTextureTiling(GetComponent<Renderer>().sharedMaterial, new Vector3(1.0f, transform.localScale.y * material_tiling_multiplier.y, transform.localScale.z * material_tiling_multiplier.x));
     }
 
     void SetTextureTiling(Material material, Vector3 scale)
